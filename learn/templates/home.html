@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>home</title>
-</head>
-<body>
-   <h3>home</h3>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card">
+         {% for todo in todos %}
+            <a class="card-body" href="{% url 'detail' todo.id %}">{{todo.title}}</a><br>
+         {% endfor %}
+    </div>
+{% endblock content %}
